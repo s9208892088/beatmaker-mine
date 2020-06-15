@@ -1,0 +1,158 @@
+@mixin flex($direction, $justify_content, $align_items) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify_content;
+  align-items: $align_items;
+}
+
+@keyframes moving {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Baloo 2", cursive;
+}
+
+body {
+  min-height: 100vh;
+  background-color: black;
+  color: white;
+}
+
+.sequencer {
+  @include flex(column, center, center);
+  min-height: 100vh;
+}
+
+.kick_part,
+.snare_part,
+.hihat_part {
+  @include flex(row, space-between, center);
+  width: 70%;
+  margin-top: 5rem;
+}
+
+.kick_part {
+  margin-top: 1rem;
+}
+
+.control {
+  @include flex(row, space-between, center);
+  margin-right: 5rem;
+  flex: 1;
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+.pads {
+  display: flex;
+  width: 80%;
+
+  .pad {
+    width: 5rem;
+    height: 5rem;
+    margin: 1rem 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    opacity: 0.5;
+  }
+
+  .active {
+    opacity: 1;
+  }
+
+  .kick_pad {
+    background-color: #19d3da;
+  }
+  .snare_pad {
+    background-color: deeppink;
+  }
+  .hihat_pad {
+    background-color: lightsalmon;
+  }
+}
+
+i {
+  pointer-events: none;
+}
+
+.mute {
+  padding: 0.3rem 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 1rem;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.muting {
+  opacity: 0.35;
+}
+
+select {
+  border: none;
+  color: white;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.2rem;
+}
+select.kick_select {
+  background-color: #19d3da;
+}
+select.snare_select {
+  background-color: deeppink;
+}
+select.hihat_select {
+  background-color: lightsalmon;
+}
+
+.play_button {
+  background-color: springgreen;
+  border: none;
+  font-size: 3rem;
+  padding: 0rem 1rem;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+.bpm_number {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.slider {
+  border-radius: 1rem;
+  appearance: none;
+  width: 30%;
+  /*background-color: rgba(209, 203, 203, 0.801);*/
+  background-color: grey;
+  height: 0.2rem;
+  outline: none;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 1rem; /* Set a specific slider handle width */
+  height: 1rem; /* Slider handle height */
+  background: #45eb45; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 50%;
+}
+
+.slider::-moz-range-thumb {
+  width: 1rem; /* Set a specific slider handle width */
+  height: 1rem; /* Slider handle height */
+  background: #45eb45; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 50%;
+}

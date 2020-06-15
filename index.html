@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap"
+      rel="stylesheet"
+    />
+    <title>Beat Maker</title>
+  </head>
+  <body>
+    <div class="sequencer">
+      <!--kick-->
+      <div class="kick_part">
+        <!--here is the control part-->
+        <div class="control">
+          <h1>Kick</h1>
+          <button class="mute kick_mute">
+            <i class="fas fa-volume-mute"></i>
+          </button>
+          <select class="kick_select">
+            <option value="./sounds/kick-classic.wav">Classic Kick</option>
+            <option value="./sounds/kick-808.wav">808 Kick</option>
+            <option value="./sounds/kick-heavy.wav">Kick Heavy</option>
+          </select>
+        </div>
+        <!--here is the pads-->
+        <div class="pads">
+          <div class="pad kick_pad p0"></div>
+          <div class="pad kick_pad p1"></div>
+          <div class="pad kick_pad p2"></div>
+          <div class="pad kick_pad p3"></div>
+          <div class="pad kick_pad p4"></div>
+          <div class="pad kick_pad p5"></div>
+          <div class="pad kick_pad p6"></div>
+          <div class="pad kick_pad p7"></div>
+          <div class="pad kick_pad p8"></div>
+        </div>
+      </div>
+
+      <!--snare-->
+      <div class="snare_part">
+        <!--here is the control part-->
+        <div class="control">
+          <h1>Snare</h1>
+          <button class="mute snare_mute">
+            <i class="fas fa-volume-mute"></i>
+          </button>
+          <select class="snare_select" id="snare_select">
+            <option value="./sounds/snare-acoustic01.wav">Class Snare</option>
+            <option value="./sounds/snare-808.wav">808 Snare</option>
+            <option value="./sounds/snare-vinyl02.wav">Snare Vinyl</option>
+          </select>
+        </div>
+        <!--here is the pads-->
+        <div class="pads">
+          <div class="pad snare_pad p0"></div>
+          <div class="pad snare_pad p1"></div>
+          <div class="pad snare_pad p2"></div>
+          <div class="pad snare_pad p3"></div>
+          <div class="pad snare_pad p4"></div>
+          <div class="pad snare_pad p5"></div>
+          <div class="pad snare_pad p6"></div>
+          <div class="pad snare_pad p7"></div>
+          <div class="pad snare_pad p8"></div>
+        </div>
+      </div>
+
+      <!--hihat-->
+      <div class="hihat_part">
+        <!--here is the control part-->
+        <div class="control">
+          <h1>Hihat</h1>
+          <button class="mute hihat_mute">
+            <i class="fas fa-volume-mute"></i>
+          </button>
+          <select class="hihat_select">
+            <option value="./sounds/hihat-acoustic01.wav">Classic Hihat</option>
+            <option value="./sounds/hihat-808.wav">808 Hihat</option>
+          </select>
+        </div>
+        <!--here is the pads-->
+        <div class="pads">
+          <div class="pad hihat_pad p0"></div>
+          <div class="pad hihat_pad p1"></div>
+          <div class="pad hihat_pad p2"></div>
+          <div class="pad hihat_pad p3"></div>
+          <div class="pad hihat_pad p4"></div>
+          <div class="pad hihat_pad p5"></div>
+          <div class="pad hihat_pad p6"></div>
+          <div class="pad hihat_pad p7"></div>
+          <div class="pad hihat_pad p8"></div>
+        </div>
+      </div>
+
+      <button class="play_button">
+        Play
+      </button>
+
+      <p class="bpm_number">150</p>
+      <input type="range" max="300" min="50" value="150" class="slider" />
+    </div>
+
+    <audio class="kick_sound" src="sounds/kick-classic.wav"></audio>
+    <audio class="snare_sound" src="sounds/snare-acoustic01.wav"></audio>
+    <audio class="hihat_sound" src="sounds/hihat-acoustic01.wav"></audio>
+    <!--this is for font awesome-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+      integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs="
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
